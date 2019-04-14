@@ -1,0 +1,25 @@
+	<p>
+		<% @product.images.each do |image| %>
+		   <%= image_tag(image.url, size: "46x46") %>
+		<% end %><br>
+		Product: <%= @product.name %><br>	
+		Price: <%= @product.price %><br>	
+		Description: <%= @product.description %><br>	
+		Count of product: <%= @product.pcount %><br>	
+	</p>
+
+<%= link_to 'Write comment', new_product_post_path(@product.id) %> |
+<%= link_to 'Write question', new_product_question_path(@product.id) %> |
+<%= link_to 'Order a product', new_product_order_path(@product.id) %><br>
+
+----------------------------------<br>
+
+<% @comments.each do |comment| %>
+Comment: <%= comment.body %><br>
+<% end %>
+
+----------------------------------<br>
+
+<% @questions.each do |question| %>
+Question: <%= question.body %><br>
+<% end %>

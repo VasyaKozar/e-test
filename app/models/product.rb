@@ -6,4 +6,5 @@ class Product < ApplicationRecord
     has_many :posts
     has_many :questions
     has_many :orders
+  validates :name, :description, :price, presence: true
 end
